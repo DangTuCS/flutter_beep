@@ -15,4 +15,20 @@ RaisedButton( child: Text("Beep iOS Custom"), onPressed: ()=> FlutterBeep.playSy
 ```
 
 
+## iOS: Swift Package Manager
+
+The iOS plugin ships both a Swift package (`ios/flutter_beep/Package.swift`) and a
+CocoaPods podspec, so it works either way with no change to your app.
+
+Swift Package Manager is used automatically when it is enabled in your Flutter
+toolchain:
+
+```sh
+flutter config --enable-swift-package-manager
+```
+
+Apps still on CocoaPods keep working as before. Minimum deployment target for
+both integrations is iOS 12.0.
+
+
 LICENSE: FREE
