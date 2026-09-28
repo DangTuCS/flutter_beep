@@ -11,14 +11,20 @@ let package = Package(
     products: [
         .library(name: "flutter-beep", targets: ["flutter_beep"])
     ],
-    dependencies: [],
+    dependencies: [
+        .package(name: "FlutterFramework", path: "../FlutterFramework")
+    ],
     targets: [
         .target(
             name: "flutter_beep",
-            dependencies: [],
-            resources: [],
+            dependencies: [
+                .product(name: "FlutterFramework", package: "FlutterFramework")
+            ],
+            path: "Classes",
+            sources: ["FlutterBeepPlugin.m"],
+            publicHeadersPath: ".",
             cSettings: [
-                .headerSearchPath("include/flutter_beep")
+                .headerSearchPath(".")
             ],
             linkerSettings: [
                 .linkedFramework("AudioToolbox")
